@@ -107,34 +107,175 @@ function App() {
           {/* RIGHT SIDE */}
 
           <motion.div
-            className="flex justify-center"
+            className="flex justify-center items-center relative"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
           >
+            {/* OUTER GLOW */}
+            <div
+              className="
+      absolute
+      w-[420px]
+      h-[420px]
+      rounded-full
+      bg-cyan-400/10
+      blur-3xl
+      animate-pulse
+    "
+            ></div>
+
+            {/* ROTATING NEON RING */}
             <motion.div
               className="
-  w-80
-  h-80
-  rounded-full
-  border-4
-  border-cyan-400
-  overflow-hidden
-  shadow-[0_0_60px_rgba(34,211,238,0.6)]
-  "
+      absolute
+      w-[340px]
+      h-[340px]
+      rounded-full
+      border-[3px]
+      border-dashed
+      border-cyan-400/50
+    "
+              animate={{ rotate: 360 }}
+              transition={{
+                duration: 12,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+            />
+
+            {/* SECOND RING */}
+            <motion.div
+              className="
+      absolute
+      w-[370px]
+      h-[370px]
+      rounded-full
+      border
+      border-cyan-300/20
+    "
+              animate={{ rotate: -360 }}
+              transition={{
+                duration: 18,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+            />
+
+            {/* FLOATING PARTICLES */}
+            <motion.span
+              className="
+      absolute
+      top-10
+      left-10
+      w-3
+      h-3
+      bg-cyan-400
+      rounded-full
+      shadow-[0_0_20px_rgba(34,211,238,1)]
+    "
               animate={{
-                y: [0, -10, 0],
+                y: [0, -20, 0],
+                opacity: [1, 0.2, 1],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+              }}
+            />
+
+            <motion.span
+              className="
+      absolute
+      bottom-12
+      right-12
+      w-2
+      h-2
+      bg-blue-400
+      rounded-full
+      shadow-[0_0_20px_rgba(59,130,246,1)]
+    "
+              animate={{
+                y: [0, 20, 0],
+                opacity: [1, 0.2, 1],
               }}
               transition={{
                 duration: 3,
                 repeat: Infinity,
+              }}
+            />
+
+            {/* MAIN IMAGE CONTAINER */}
+            <motion.div
+              className="
+      relative
+      w-80
+      h-80
+      rounded-full
+      overflow-hidden
+      border-4
+      border-cyan-400
+      shadow-[0_0_80px_rgba(34,211,238,0.7)]
+    "
+              animate={{
+                y: [0, -12, 0],
+                opacity: [1, 0.3, 1],
+                scale: [1, 0.97, 1],
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
                 ease: "easeInOut",
               }}
             >
+              {/* AI HOLOGRAM EFFECT */}
+              <div
+                className="
+        absolute
+        inset-0
+        bg-gradient-to-b
+        from-cyan-400/10
+        via-transparent
+        to-cyan-400/10
+        animate-pulse
+        z-20
+      "
+              ></div>
+
+              {/* MOVING LIGHT BEAM */}
+              <motion.div
+                className="
+        absolute
+        top-0
+        -left-20
+        w-24
+        h-full
+        bg-white/20
+        blur-xl
+        rotate-12
+        z-30
+      "
+                animate={{
+                  left: ["-20%", "120%"],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "linear",
+                }}
+              />
+
+              {/* PROFILE IMAGE */}
               <img
                 src={profilePic}
                 alt="Profile"
-                className="w-full h-full object-cover"
+                className="
+        relative
+        z-10
+        w-full
+        h-full
+        object-cover
+      "
               />
             </motion.div>
           </motion.div>
