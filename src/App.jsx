@@ -7,7 +7,7 @@ function App() {
       {/* Navbar */}
       <nav className="fixed top-0 w-full bg-slate-900/80 backdrop-blur-md border-b border-slate-700 z-50">
         <div className="max-w-7xl mx-auto flex justify-between items-center px-8 py-4">
-          <h1 className="text-2xl font-bold text-cyan-400">Sandipan</h1>
+          <h1 className="text-2xl font-bold text-cyan-400">SB</h1>
 
           <ul className="hidden md:flex gap-8 text-white">
             <li>
